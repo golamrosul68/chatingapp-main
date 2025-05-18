@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
 
 const Signup = () => {
-  
+  const [userInfo, srtUserInfo] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const handleName = (e) => {
+  srtUserInfo(e.target.value)
+  };
+
+  const hendleSigup = (e) => {
+    e.preventDefault();
+    console.log("submitad",userInfo );
+  };
   return (
     <div className="flex justify-center items-center bg-slate-100 h-full md:min-h-screen p-4">
       <div className="grid justify-center max-w-md mx-auto">
@@ -13,7 +26,10 @@ const Signup = () => {
             alt="login-image"
           />
         </div>
-        <form className="bg-white rounded-2xl p-6 -mt-24 relative z-10 [box-shadow:0_2px_16px_-3px_rgba(6,81,237,0.3)]">
+        <form
+          onSubmit={hendleSigup}
+          className="bg-white rounded-2xl p-6 -mt-24 relative z-10 [box-shadow:0_2px_16px_-3px_rgba(6,81,237,0.3)]"
+        >
           <div className="mb-12">
             <h3 className="text-3xl font-bold text-blue-600">
               Sign up your account
@@ -22,6 +38,7 @@ const Signup = () => {
           <div className="space-y-6">
             <div className="relative flex items-center">
               <input
+                onChange={handleName}
                 name="taxt"
                 type="text"
                 id="text"
@@ -145,7 +162,7 @@ const Signup = () => {
           </div>
           <div className="mt-12">
             <button
-              type="button"
+              type="submit"
               className="w-full py-2 px-4 text-[15px] font-medium tracking-wider rounded-md cursor-pointer text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
             >
               Sign in
