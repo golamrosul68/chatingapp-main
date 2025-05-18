@@ -1,13 +1,8 @@
-import React, {usestate} from "react";
+import React from "react";
 import { Link } from "react-router";
 
 const Signup = () => {
-  const [userinfo, setuserinfo] = usestate({
-    name: "",
-    email: "",
-    password: "",
-  });
-
+  
   return (
     <div className="flex justify-center items-center bg-slate-100 h-full md:min-h-screen p-4">
       <div className="grid justify-center max-w-md mx-auto">
