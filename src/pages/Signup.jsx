@@ -1,9 +1,15 @@
-import React from 'react'
-import { Link } from 'react-router'
+import React, {usestate} from "react";
+import { Link } from "react-router";
 
 const Signup = () => {
+  const [userinfo, setuserinfo] = usestate({
+    name: "",
+    email: "",
+    password: "",
+  });
+
   return (
- <div className="flex justify-center items-center bg-slate-100 h-full md:min-h-screen p-4">
+    <div className="flex justify-center items-center bg-slate-100 h-full md:min-h-screen p-4">
       <div className="grid justify-center max-w-md mx-auto">
         <div>
           <img
@@ -14,14 +20,16 @@ const Signup = () => {
         </div>
         <form className="bg-white rounded-2xl p-6 -mt-24 relative z-10 [box-shadow:0_2px_16px_-3px_rgba(6,81,237,0.3)]">
           <div className="mb-12">
-            <h3 className="text-3xl font-bold text-blue-600">Sign up your account</h3>
+            <h3 className="text-3xl font-bold text-blue-600">
+              Sign up your account
+            </h3>
           </div>
           <div className="space-y-6">
             <div className="relative flex items-center">
               <input
                 name="taxt"
                 type="text"
-              id="text"
+                id="text"
                 className="w-full text-slate-800 text-sm border-b border-slate-300 focus:border-blue-600 px-2 py-3 pr-8 outline-none"
                 placeholder="Enter your name"
               />
@@ -30,7 +38,6 @@ const Signup = () => {
                 fill="#bbb"
                 stroke="#bbb"
                 className="w-[18px] h-[18px] absolute right-2"
-               
               >
                 <defs>
                   <clipPath id="a" clipPathUnits="userSpaceOnUse">
@@ -55,7 +62,7 @@ const Signup = () => {
                 </g>
               </svg>
             </div>
-             <div className="relative flex items-center">
+            <div className="relative flex items-center">
               <input
                 name="email"
                 type="text"
@@ -228,7 +235,7 @@ const Signup = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;
