@@ -108,7 +108,7 @@ const Login = () => {
               type="button"
               className="w-full py-2 px-4 text-[15px] font-medium tracking-wider rounded-md cursor-pointer text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
             >
-              Sign in
+              login
             </button>
             <p className="text-sm text-center mt-6">
               Don't have an account{" "}
