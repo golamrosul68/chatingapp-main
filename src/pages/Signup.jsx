@@ -12,10 +12,25 @@ const Signup = () => {
       return { ...prev, name: e.target.value };
     });
   };
+
+  const handleEmail = (e) => {
+    setUserInfo((prev) => {
+      return { ...prev, email: e.target.value };
+    });
+  };
+  const handlePassword = (e) => {
+    setUserInfo((prev) => {
+      return { ...prev, password: e.target.value };
+    });
+  };
+
   const hendleSigup = (e) => {
     e.preventDefault();
-    console.log("submitad", userInfo);
+    if (!userInfo.name || !userInfo.email || !userInfo.password) {
+      alert("mumaa looooo plssssssss");
+    }
   };
+
   return (
     <div className="flex justify-center items-center bg-slate-100 h-full md:min-h-screen p-4">
       <div className="grid justify-center max-w-md mx-auto">
@@ -76,9 +91,10 @@ const Signup = () => {
             </div>
             <div className="relative flex items-center">
               <input
+                onChange={handleEmail}
                 name="email"
-                type="text"
-                required=""
+                type="email"
+                required="email"
                 className="w-full text-slate-800 text-sm border-b border-slate-300 focus:border-blue-600 px-2 py-3 pr-8 outline-none"
                 placeholder="Enter email"
               />
@@ -115,6 +131,7 @@ const Signup = () => {
             <div>
               <div className="relative flex items-center">
                 <input
+                  onChange={handlePassword}
                   name="password"
                   type="password"
                   required=""
@@ -230,7 +247,7 @@ const Signup = () => {
                 />
               </svg>
             </button>
-            <button type="button" className="border-0 outline-0 cursor-pointer">
+            <button type="submit" className="border-0 outline-0 cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-6 h-6"
