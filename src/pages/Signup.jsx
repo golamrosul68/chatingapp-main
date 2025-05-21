@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import { Link } from "react-router";
 
 const Signup = () => {
-  const [userInfo, srtUserInfo] = useState({
+  const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
     password: "",
   });
-
   const handleName = (e) => {
-  srtUserInfo(e.target.value)
+    setUserInfo((prev) => {
+      return { ...prev, name: e.target.value };
+    });
   };
-
   const hendleSigup = (e) => {
     e.preventDefault();
-    console.log("submitad",userInfo );
+    console.log("submitad", userInfo);
   };
   return (
     <div className="flex justify-center items-center bg-slate-100 h-full md:min-h-screen p-4">
