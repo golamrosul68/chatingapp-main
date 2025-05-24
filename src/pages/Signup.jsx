@@ -27,7 +27,7 @@ const Signup = () => {
   const hendleSigup = (e) => {
     e.preventDefault();
     if (!userInfo.name || !userInfo.email || !userInfo.password) {
-      alert("mumaa looooo plssssssss");
+      alert("");
     }
   };
 
