@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Signup = () => {
   const [userInfo, setUserInfo] = useState({
@@ -27,12 +28,14 @@ const Signup = () => {
   const hendleSigup = (e) => {
     e.preventDefault();
     if (!userInfo.name || !userInfo.email || !userInfo.password) {
-      alert("");
+       toast.error("all fileds are required");
+    
     }
   };
 
   return (
     <div className="flex justify-center items-center bg-slate-100 h-full md:min-h-screen p-4">
+        <Toaster />
       <div className="grid justify-center max-w-md mx-auto">
         <div>
           <img
