@@ -29,8 +29,9 @@ const Signup = () => {
     e.preventDefault();
     if (!userInfo.name || !userInfo.email || !userInfo.password) {
        toast.error("all fileds are required");
-    
     }
+    if  (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userInfo.email))
+      console.log("mila gase")
   };
 
   return (
@@ -96,7 +97,7 @@ const Signup = () => {
               <input
                 onChange={handleEmail}
                 name="email"
-                type="email"
+                type="text"
                 required="email"
                 className="w-full text-slate-800 text-sm border-b border-slate-300 focus:border-blue-600 px-2 py-3 pr-8 outline-none"
                 placeholder="Enter email"
